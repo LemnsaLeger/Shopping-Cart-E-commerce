@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { User2Icon, ShoppingCart } from "lucide-react";
 import "../index.css";
 
+import { useCart } from "../context/cartcontext";
 
 const Navbar = ({ title = 'E-Store'}) => {
+
+  const { cartCount } = useCart();
 
     return (
       <>
@@ -17,7 +20,7 @@ const Navbar = ({ title = 'E-Store'}) => {
               <Link to={"/men"}>Men</Link>
             </li>
             <li>
-              <Link to={"women"}>Women</Link>
+              <Link to={"/women"}>Women</Link>
             </li>
             <li>
               <Link to={"/about"}>About</Link>
@@ -25,9 +28,16 @@ const Navbar = ({ title = 'E-Store'}) => {
             <li>
               <Link to={"/contact"}>Contact</Link>
             </li>
-            <li>
+            <li className="relative">
               <Link to={"/cart"}>
                 <ShoppingCart stroke="3" width={20} height={20} />
+                {
+                  cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full">
+                      {cartCount}
+                    </span>
+                  )
+                }
               </Link>
             </li>
             <li>
