@@ -61,7 +61,7 @@ const Main = () => {
   }
     return (
       <>
-        {activeProduct.name !== "Sneaker Company" && <Navbar title={activeProduct.name}/>}
+        {activeProduct.name !== "Sneaker Company" && <Navbar title={activeProduct.name}/>} // update navbar logo as product name
         <Card
           name={activeProduct.name}
           edition={activeProduct.edition}
@@ -74,7 +74,7 @@ const Main = () => {
           url={url}
         />
 
-        {activeProduct.images.length > 1 && (
+        {activeProduct.images.length > 1 && ( // check if default product
           <aside className="flex">
             {images.map((obj, k) => {
               return (
