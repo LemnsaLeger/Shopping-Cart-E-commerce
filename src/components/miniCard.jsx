@@ -33,7 +33,7 @@ const CartCard = ({ items = [], onCheckout }) => {
                   className="w-12 h-12 rounded-md object-cover"
                 />
                 <div className="flex-1 text-sm">
-                  <p className="text-gray-600 truncate">{item.name}</p>
+                  <p className="text-gray-600 truncate max-w-10">{item.name}</p>
                   <p className="text-gray-600">
                     ${item.price.toFixed(2)} x {item.quantity}
                     <span className="font-bold text-gray-900 ml-2">
