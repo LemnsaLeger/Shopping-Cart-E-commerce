@@ -11,6 +11,7 @@ const router = createBrowserRouter(routes);
 createRoot(document.getElementById("root")).render(
   <CartProvider>
     <RouterProvider router={router}>
+      <App />
     </RouterProvider>
   </CartProvider>
 );
