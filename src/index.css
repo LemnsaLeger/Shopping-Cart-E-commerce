@@ -35,7 +35,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 375px;
   min-height: 100vh;
 }
 
@@ -255,8 +255,17 @@ section.md\:w-1\/2 img {
     padding: 0;
   }
 
+  .big {
+    width: 100%;
+    margin-left: 0;
+  }
+
   #root > header {
     width: 100%;
+    position: relative;
+    height: 1vh;
+    padding-left: 0;
+    margin-right: 0;
   }
 
   #root > header > nav {
@@ -295,21 +304,29 @@ section.md\:w-1\/2 img {
   margin-top: 1em;
 }
 
+menu.flex {
+  padding-inline: 0;
+  margin-left: 0;
+  justify-content: space-evenly;
+}
+
  #root > main > section > main {
   position: relative;
  }
 
  #root > main > section > main > section {
-  width: 375px;
+  width: 100%;
   height: auto;
   margin-top: -15.7rem;
  }
 
   #root > main > section > main > section > img{
     border-radius: 0;
-    width: 375px;
+    width: 100%;
     margin: 0;
     margin-top: 20rem;
+    height: auto;
+    object-fit: contain;
  }
 
  .mood {
@@ -363,7 +380,6 @@ section.md\:w-1\/2 img {
   .mobile-change-img-icons {
     position: absolute;
     top: 20rem;
-    left: 1%;
     width: 100%;
     display: block;
     display: flex;
