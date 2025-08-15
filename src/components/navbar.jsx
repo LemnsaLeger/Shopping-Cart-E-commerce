@@ -36,9 +36,9 @@ const Navbar = ({ title = "E-Store" }) => {
 
   return (
     <>
-      <header className="bg-white h-20 fixed top-0 w-[100%] z-50 shadow-sm pt-3">
-        <nav className="container mx-auto border-b-2 border-gray-300 h-full pb-14">
-          <menu className="flex items-center justify-between h-full px-4 md:px-0 mt-3">
+      <header className="bg-white h-20 fixed top-0 w-[85%] z-50  pt-3 pl-4 mt-5 mr-7">
+        <nav className="container mx-auto h-full pb-14 pl-14">
+          <menu className="flex items-center justify-between h-full px-4 md:px-0 mt-3 pb-12 pl-14 pr-14">
             {/* Left side: Sidebar Toggle (mobile only) and Desktop Nav Links */}
             <div className="flex items-center h-full">
               {/* Mobile Menu Icon */}
@@ -218,6 +218,7 @@ const Navbar = ({ title = "E-Store" }) => {
           </ul>
         </div>
       </div>
+      <div className="absolute border-b-2 border-gray-300 bg-white top-25 z-50 w-[79%] left-35"></div>
     </>
   );
 };
