@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
       <>
-        <div className="attribution fixed bottom-0">
+        <div className="attribution relative mt-5 bottom-0 text-sm">
           Challenge by{" "}
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
             Frontend Mentor
