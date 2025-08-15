@@ -36,9 +36,9 @@ const Navbar = ({ title = "E-Store" }) => {
 
   return (
     <>
-      <header className="bg-white h-5">
+      <header className="bg-white h-20 fixed top-0 w-[100%] z-50 shadow-sm pt-3">
         <nav className="container mx-auto border-b-2 border-gray-300 h-full pb-14">
-          <menu className="flex items-center justify-between h-full px-4 md:px-0">
+          <menu className="flex items-center justify-between h-full px-4 md:px-0 mt-3">
             {/* Left side: Sidebar Toggle (mobile only) and Desktop Nav Links */}
             <div className="flex items-center h-full">
               {/* Mobile Menu Icon */}
@@ -134,7 +134,10 @@ const Navbar = ({ title = "E-Store" }) => {
                     )}
                   </Link>
                 </li>
-                <li className="profile-container relative" ref={profileContainerRef}>
+                <li
+                  className="profile-container relative"
+                  ref={profileContainerRef}
+                >
                   <p
                     onClick={toggleCartVisibility}
                     style={{ cursor: "pointer" }}
