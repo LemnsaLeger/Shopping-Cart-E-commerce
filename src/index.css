@@ -218,7 +218,7 @@ svg {
 
 .profile-container {
   border: 2px solid transparent;
-  
+
 }
 
 #root > main > section > main > aside > h4 {
@@ -292,6 +292,7 @@ svg {
     border-radius: 0;
     width: 375px;
     margin: 0;
+    margin-top: 9.3rem;
  }
 
  .mood {
@@ -337,8 +338,8 @@ svg {
     gap: 0.9em;
   }
 
-    #root > main > section > main > aside > section > section > div {
-        justify-content: space-around;
+  #root > main > section > main > aside > section > section > div {
+    justify-content: space-around;
   }
 
   /* next and pre message icons */
@@ -381,6 +382,10 @@ svg {
 
   .smallie-card header h3 {
     font-size: 1em;
+  }
+
+  #root > header > nav > menu > div.flex.items-center.h-full > ul > li:nth-child(1) > a:hover {
+    color: #000000;
   }
   
 }
