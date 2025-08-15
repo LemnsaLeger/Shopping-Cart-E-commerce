@@ -17,6 +17,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root{
+  padding: 0;
+  margin: 0;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -170,11 +175,12 @@ svg {
 }
 
 .big {
-  width: 90%;
+  width: 65rem;
   display: flex;
   /* background-color: #000000; */
   flex-wrap: wrap;
-  place-content: center;
+  justify-content: center;
+  margin-left: 10rem;
 }
 
 .big .lego{
@@ -183,6 +189,16 @@ svg {
   /* background-color: #535bf2; */
   justify-content: center;
   align-items: flex-start;
+}
+
+section.md\:w-1\/2{
+  width: 40%;
+  /* background-color: #000000; */
+}
+
+section.md\:w-1\/2 img {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .lego .first-section p.first-p, .lego .cancelledd-price{

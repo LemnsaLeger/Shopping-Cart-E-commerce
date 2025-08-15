@@ -138,7 +138,7 @@ const Main = () => {
         />
 
         {activeProduct.images.length > 1 && (
-          <section className="absolute flex justify-center gap-2 left-[15%] bottom-[11rem]">
+          <section className="absolute flex justify-center gap-2 left-[21%] bottom-[7.5rem]">
             {activeProduct.images.map((imgObj, index) => (
               <article
                 key={index}
