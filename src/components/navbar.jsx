@@ -218,7 +218,7 @@ const Navbar = ({ title = "E-Store" }) => {
           </ul>
         </div>
       </div>
-      <div className="absolute border-b-2 border-gray-300 bg-white top-25 z-50 w-[79%] left-35"></div>
+      <div className="absolute border-b-2 border-gray-300 bg-white top-25 z-50 w-[79%] left-46"></div>
     </>
   );
 };
