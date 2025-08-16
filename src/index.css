@@ -37,6 +37,7 @@ body {
   place-items: center;
   min-width: 375px;
   min-height: 100vh;
+  width: 100%;
 }
 
 h1 {
@@ -234,7 +235,6 @@ section.md\:w-1\/2 img {
 
 .profile-container {
   border: 2px solid transparent;
-
 }
 
 #root > main > section > main > aside > h4 {
@@ -244,6 +244,25 @@ section.md\:w-1\/2 img {
 .mobile-change-img-icons {
   display: none;
 }
+
+  .bg-green-100 {
+    top: 5rem;
+    z-index: 9999;
+    right: 4rem;
+  }
+
+    .max-w-7xl {
+    margin-left: 8rem;
+    top: 0;
+  }
+
+  .grid{
+    width: 100%;
+  }
+
+  header.bg-white {
+    position: relative;
+  }
 
 @media  screen and (max-width: 500px) {
 /* home page */
@@ -307,7 +326,14 @@ section.md\:w-1\/2 img {
 menu.flex {
   padding-inline: 0;
   margin-left: 0;
-  justify-content: space-evenly;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+div.absolute {
+  border: none;
+  width: 100%;
 }
 
  #root > main > section > main {
@@ -342,6 +368,9 @@ menu.flex {
   padding: 0;
  }
 
+ div.fixed {
+  z-index: 9999;
+ }
   #root > main > section > main > aside {
     padding-inline-start: 1.5rem;
   }
@@ -404,12 +433,9 @@ menu.flex {
 
   /* mini-card  */
   .smallie-card {
-    width: 96%;
     right: 2%;
-    top: 0;
-    top: 3.5%;
     border: 1px solid lightgray;
-    height: 28vh;
+    height: auto;
     z-index: 9999;
   }
 
@@ -424,6 +450,24 @@ menu.flex {
   /* hide overlay */
   #root > main > section.mood.flex-grow.pt-20.relative > section.fixed.inset-0.bg-black\/70.z-50.flex.items-center.justify-center.p-4{
     display: none;
+  }
+
+  header.bg-white {
+    position: static;
+    width: 100%;
+  }
+
+  .container {
+    padding-inline-start: 0;
+  }
+
+  .bg-green-100 {
+    top: 5rem;
+    z-index: 9999;
+  }
+
+  .mt-10 {
+    width: 100%;
   }
 
 }
