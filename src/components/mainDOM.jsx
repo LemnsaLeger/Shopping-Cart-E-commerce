@@ -15,6 +15,7 @@ import Overlay from "./overlay";
 
 import "../index.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Success from "./success";
 
 const Main = () => {
   const { showSuccess } = useCart();
@@ -90,82 +91,89 @@ const Main = () => {
 
 
   return (
-    <main className="hello min-h-screen flex flex-col">
-      {activeProduct.name !== "Sneaker Company" && (
-        <Navbar title={activeProduct.name} />
-      )}
-
-      {showOverlay && (
-        <Overlay
-          url={activeProduct.images[currentImageIndex].img}
-          thumbnails={activeProduct.images.map((img) => img.thumb)}
-          onClose={handleCloseOverlay}
-          onNext={handleNextImage}
-          onPrev={handlePrevImage}
-          onThumbnailClick={handleThumbnailClick}
-          mainImgs={mainImg}
-          i={currentImageIndex}
-        />
-      )}
-
-      {/* mobile next and prev icons */}
-      <section className="mobile-change-img-icons">
-        <div className="btn" onClick={ handlePrevImage}>
-          <ChevronLeft strokeWidth={3} width={30} height={30} />
-        </div>
-        <div className="btn" onClick={ handleNextImage}>
-          <ChevronRight strokeWidth={3} width={30} height={30} />
-        </div>
-      </section>
-
-      <section className="mood flex-grow pt-20 relative">
-        <Card
-          name={activeProduct.name}
-          edition={activeProduct.edition}
-          description={activeProduct.description}
-          price={activeProduct.pricing?.price || activeProduct.price}
-          discount={
-            activeProduct.pricing?.discountPercentage ||
-            activeProduct.discountPercentage
-          }
-          url={activeProduct.images[currentImageIndex].img}
-          thumbnails={activeProduct.images.map((img) => img.thumb)}
-          onImageClick={() => {
-            setShowOverlay(true);
-            setCurrentImageIndex(0);
-          }}
-          mainImgs={mainImg}
-        />
-
-        {activeProduct.images.length > 1 && (
-          <section className="absolute flex justify-center gap-2 left-[21%] bottom-[7.5rem]">
-            {activeProduct.images.map((imgObj, index) => (
-              <article
-                key={index}
-                className={`thumbnail w-20 h-20 cursor-pointer border-2 rounded-lg overflow-hidden ${
-                  currentImageIndex === index
-                    ? "border-orange-500"
-                    : "border-transparent"
-                }`}
-                onClick={() => {
-                  setCurrentImageIndex(index);
-                }}
-              >
-                <img
-                  src={imgObj.thumb}
-                  alt={`thumbnail-${index}`}
-                  className={`w-fit h-fit object-cover rounded-lg block ${
-                    currentImageIndex === index
-                      ? "active-thumbnail opacity-50 rounded-none"
-                      : ""
-                  }`}
-                />
-              </article>
-            ))}
-          </section>
+    <>
+    {
+      showSuccess && (
+        <Success />
+      )
+    }
+      <main className="hello min-h-screen flex flex-col">
+        {activeProduct.name !== "Sneaker Company" && (
+          <Navbar title={activeProduct.name} />
         )}
-      </section>
-    </main>
+
+        {showOverlay && (
+          <Overlay
+            url={activeProduct.images[currentImageIndex].img}
+            thumbnails={activeProduct.images.map((img) => img.thumb)}
+            onClose={handleCloseOverlay}
+            onNext={handleNextImage}
+            onPrev={handlePrevImage}
+            onThumbnailClick={handleThumbnailClick}
+            mainImgs={mainImg}
+            i={currentImageIndex}
+          />
+        )}
+
+        {/* mobile next and prev icons */}
+        <section className="mobile-change-img-icons">
+          <div className="btn" onClick={handlePrevImage}>
+            <ChevronLeft strokeWidth={3} width={30} height={30} />
+          </div>
+          <div className="btn" onClick={handleNextImage}>
+            <ChevronRight strokeWidth={3} width={30} height={30} />
+          </div>
+        </section>
+
+        <section className="mood flex-grow pt-20 relative">
+          <Card
+            name={activeProduct.name}
+            edition={activeProduct.edition}
+            description={activeProduct.description}
+            price={activeProduct.pricing?.price || activeProduct.price}
+            discount={
+              activeProduct.pricing?.discountPercentage ||
+              activeProduct.discountPercentage
+            }
+            url={activeProduct.images[currentImageIndex].img}
+            thumbnails={activeProduct.images.map((img) => img.thumb)}
+            onImageClick={() => {
+              setShowOverlay(true);
+              setCurrentImageIndex(0);
+            }}
+            mainImgs={mainImg}
+          />
+
+          {activeProduct.images.length > 1 && (
+            <section className="absolute flex justify-center gap-2 left-[21%] bottom-[7.5rem]">
+              {activeProduct.images.map((imgObj, index) => (
+                <article
+                  key={index}
+                  className={`thumbnail w-20 h-20 cursor-pointer border-2 rounded-lg overflow-hidden ${
+                    currentImageIndex === index
+                      ? "border-orange-500"
+                      : "border-transparent"
+                  }`}
+                  onClick={() => {
+                    setCurrentImageIndex(index);
+                  }}
+                >
+                  <img
+                    src={imgObj.thumb}
+                    alt={`thumbnail-${index}`}
+                    className={`w-fit h-fit object-cover rounded-lg block ${
+                      currentImageIndex === index
+                        ? "active-thumbnail opacity-50 rounded-none"
+                        : ""
+                    }`}
+                  />
+                </article>
+              ))}
+            </section>
+          )}
+        </section>
+      </main>
+    </>
   );
 };
 
